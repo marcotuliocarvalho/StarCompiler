@@ -4,6 +4,8 @@
     "if",
     "elif",
     "else",
+    "switch",
+    "case",
     "return",
     "import",
     "True",
