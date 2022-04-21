@@ -4,6 +4,5 @@
     "void",
     "char",
     "string",
-    "bool",
-    "double"
+    "bool"
 ]

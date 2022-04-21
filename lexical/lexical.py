@@ -129,7 +129,7 @@ class Lexical(object):
         Lexical.__generate_token__()
         if not len(Lexical.__log__.errors):
             Lexical.__log__.errors = None
-            
+              
 __all__ = [
     "Lexical"
 ]

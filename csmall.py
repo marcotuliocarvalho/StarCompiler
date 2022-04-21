@@ -8,7 +8,7 @@ if __name__ == "__main__":
     #     print("Deve ser especificado o arquivo a ser compilado!")
     #     exit(1)
     
-    Lexical.analyze("script.star")#sys.argv[1])
+    Lexical.analyze("teste.star")#sys.argv[1])
 
     if Lexical.__log__.tokens:
         print("*******Lexical Tokens*******")

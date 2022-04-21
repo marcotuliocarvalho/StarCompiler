@@ -10,7 +10,8 @@
         "R_PARENTHESIS",
         "L_PARENTHESIS",
         "LOGICAL_OPERATORS",
-        "ARITHMETIC_OPERATOR"
+        "ARITHMETIC_OPERATOR",
+        "CASE_START"
     ],
     "RESERVED":[
         "L_PARENTHESIS"
@@ -24,7 +25,8 @@
         "L_PARENTHESIS",
         "R_PARENTHESIS",
         "SEPARATOR",
-        "END_INSTRUCTION"
+        "END_INSTRUCTION",
+        "CASE_START"
     ],
     "INTEGER":[
         "ARITHMETIC_OPERATOR",
@@ -32,7 +34,8 @@
         "L_PARENTHESIS",
         "R_PARENTHESIS",
         "SEPARATOR",
-        "END_INSTRUCTION"
+        "END_INSTRUCTION",
+        "CASE_START"
     ],
     "LITERAL":[
         "ARITHMETIC_OPERATOR",
@@ -40,7 +43,8 @@
         "L_PARENTHESIS",
         "R_PARENTHESIS",
         "SEPARATOR",
-        "END_INSTRUCTION"
+        "END_INSTRUCTION",
+        "CASE_START"
     ],
     "FLOAT":[
         "ARITHMETIC_OPERATOR",
@@ -48,7 +52,8 @@
         "L_PARENTHESIS",
         "R_PARENTHESIS",
         "SEPARATOR",
-        "END_INSTRUCTION"
+        "END_INSTRUCTION",
+        "CASE_START"
     ],
     "ARITHMETIC_OPERATOR":[
         "ID",
@@ -75,8 +80,8 @@
         "TYPES",
         "INTEGER",
         "FLOAT",
-        "LITERAL",
-        "CHAR",
+        "'",
+        "\"",
         "ARITHMETIC_OPERATOR",
         "END_INSTRUCTION",
         "R_PARENTHESIS"
@@ -100,7 +105,11 @@
         "RESERVED",
         "TYPES",
         "ARITHMETIC_OPERATOR",
-        "END_INSTRUCTION"
+        "END_INSTRUCTION",
+        "INTEGER",
+        "FLOAT",
+        "\"",
+        "'"
     ],
     "END_INSTRUCTION": [
         "ID",
@@ -127,5 +136,10 @@
         "ARITHMETIC_OPERATOR",
         "LOGICAL_OPERATORS",
         "END_INSTRUCTION"
+    ],
+    "CASE_START":[
+        "RESERVED",
+        "ID",
+        "TYPES"
     ]
 }
