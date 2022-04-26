@@ -1,6 +1,5 @@
 import json
 import re
-from .log import *
 
 with open("lexical/tokens/regex.json", 'r') as f:
     reg = json.load(f)
@@ -14,7 +13,23 @@ with open("lexical/tokens/types.json", 'r') as f:
 with open("lexical/tokens/reserved_words.json", 'r') as f:
     res = json.load(f)
 spaces = [' ','\t','\n']
+
+class Token():
+    def __init__(self,**kwargs)-> None:
+        for i in kwargs:
+            setattr(self,i,kwargs[i])
+
+class LexicalLog():
+    def __init__(self):
+        self.errors = []
+        self.tokens = []
+
+    def add_token(self,**kwargs)->None:
+        self.tokens.append(Token(**kwargs))
     
+    def add_error(self,**kwargs)->None:
+        self.errors.append(Token(**kwargs))
+
 class Lexical(object):
 
     def __token_type__(t = None,err=True):
@@ -131,5 +146,7 @@ class Lexical(object):
             Lexical.__log__.errors = None
               
 __all__ = [
-    "Lexical"
+    "Lexical",
+    "LexicalLog",
+    "Token"
 ]

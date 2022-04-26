@@ -44,28 +44,28 @@ Para realizar um fluxo de código utilizar as condicionais pode ser uma boa boa 
 ```
 if (<condição>)
 {
- # se a condição do if for verdadeiro entao executa o bloco de código
+    # se a condição do if for verdadeiro entao executa o bloco de código
 }
 elif(<condição>)
 {
- # será executado caso a condição do if seja False
- # e a condição do elif seja verdadeiro
+    # será executado caso a condição do if seja False
+    # e a condição do elif seja verdadeiro
 }
 else
 {
- # se as outras condições forem False o código no else é executado
+    # se as outras condições forem False o código no else é executado
 }
 ```
 Outra importante estrutura é [switch](#switch) [case](#case), assemelhando-se às condicionais anteriormente apresentadas
 ```
 switch(<identificador>)
 {
- case <num/char/string>:
-  # executa caso <identificador> == <num/char/string>
-  break;
- default:
-  # bloco padrão
-  break;
+    case <num/char/string>:
+        # executa caso <identificador> == <num/char/string>
+        break;
+    default:
+        # bloco padrão
+        break;
 }
 ```
 ### Repetições
@@ -73,19 +73,19 @@ Para realizar uma repetição utiliza-se a palavra reservada [repeat](#repeat) e
 ```
 repeat(int i = 0; i < 10; i++)
 {
- #funciona como um for
+    #funciona como um for
 }
 
 int i = 0;
 repeat(i++ < 10)
 {
- # funciona como while
+    # funciona como while
 }
 
 int j = 0;
 do
 {
- #funciona como do while
+    #funciona como do while
 }repeat(j++<10);
 ```
 ### Case Sensitive
@@ -104,58 +104,58 @@ import utils
 
 int sum(int a, int b)
 {
- return a+b;
+    return a+b;
 }
 
 float mult(float a, float b)
 {
- return a*b;
+    return a*b;
 }
 string concat(string a, string b)
 {
- return a+b;
+    return a+b;
 }
 
 int main()
 {
- int var1 = 2,var2 = 4;
- 
- log(sum(var1,var2));
- 
- #ocorre um cast implícito
- log(mult(var1,var2));
- 
- log(concat("Hello"," World"));
- 
- repeat(int i = 0; i < 5;i++)
- {
-  repeat(int j = 0; j < i;j++)
-  {
-   log("*");
-  }
-  log("/n");
- }
- 
- switch(var1)
- {
-  case 2:
-   log(2);
-   break;
-  default:
-   log("Não é dois\n");
- }
- 
- if(var2 == 2)
- {
-  log("var2 é igual a 2\n");
- }
- elif(var2 == 3)
- {
-  log("var2 é igual a 3\n");
- }
- else
- {
-  log("var2 não é igual a 3 e nem 2\n");
- }
+    int var1 = 2,var2 = 4;
+    
+    log(sum(var1,var2));
+    
+    #ocorre um cast implícito
+    log(mult(var1,var2));
+    
+    log(concat("Hello"," World"));
+    
+    repeat(int i = 0; i < 5;i++)
+    {
+        repeat(int j = 0; j < i;j++)
+        {
+            log("*");
+        }
+        log("/n");
+    }
+    
+    switch(var1)
+    {
+        case 2:
+            log(2);
+            break;
+        default:
+            log("Não é dois\n");
+    }
+    
+    if(var2 == 2)
+    {
+        log("var2 é igual a 2\n");
+    }
+    elif(var2 == 3)
+    {
+        log("var2 é igual a 3\n");
+    }
+    else
+    {
+        log("var2 não é igual a 3 e nem 2\n");
+    }
 }
 ```
