@@ -4,7 +4,7 @@
     "INTEGER":"^[0-9]+$",
     "LITERAL":"^\".*\"$",
     "FLOAT":"([0-9]*\\.([0-9]+f?)$)|([0-9]+(\\.|f)$)",
-    "ARITHMETIC_OPERATOR":"^((\\+|\\-|\\/|\\*|=){1})$",
+    "ARITHMETIC_OPERATOR":"^((//|\\+|\\-|\\/|\\*|=){1})$",
     "LOGICAL_OPERATORS": "^((==)|>=|<=|!=|>|<)$",
     "L_PARENTHESIS": "^\\({1}$",
     "R_PARENTHESIS": "^\\){1}$",

@@ -33,6 +33,12 @@ int main()
         }
         log("/n");
     }
+
+    int j = 0;
+    repeat(j++<10)
+    {
+        log(j);
+    }
     
     switch(var1)
     {
@@ -54,5 +60,9 @@ int main()
     else
     {
         log("var2 não é igual a 3 e nem 2\n");
+    }
+    if(1//2 == 1)
+    {
+        log("Realizando operação de resto na divisão inteira!");
     }
 }

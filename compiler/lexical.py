@@ -1,23 +1,4 @@
-import json
-import re
-
-with open("lexical/tokens/regex.json", 'r') as f:
-    reg = json.load(f)
-with open("lexical/tokens/separators.json", 'r') as f:
-    sep = json.load(f)
-    for i in sep:
-        if i !="EVERY":
-            sep[i] += sep["EVERY"]        
-with open("lexical/tokens/types.json", 'r') as f:
-    typ = json.load(f)
-with open("lexical/tokens/reserved_words.json", 'r') as f:
-    res = json.load(f)
-spaces = [' ','\t','\n']
-
-class Token():
-    def __init__(self,**kwargs)-> None:
-        for i in kwargs:
-            setattr(self,i,kwargs[i])
+from common.common import *
 
 class LexicalLog():
     def __init__(self):
@@ -77,6 +58,9 @@ class Lexical(object):
 
     def __create_token__(col,row,char = None):
         Lexical.__token__ = Lexical.__token_type__()
+        
+        if not Lexical.__token__:
+            return
         if char and not Lexical.__token__ and not (char== '"' or char=="'"):
             Lexical.__error__ = {"col":col,"row":row}
             return False
@@ -85,24 +69,28 @@ class Lexical(object):
             char_token_type = Lexical.__token_type__(char)
             if char not in separator and char_token_type not in separator:
                 Lexical.__error__ = {"col":col,"row":row}
+                print(col," ",row)
                 return False
         if Lexical.__token__ == "ID":
             if Lexical.__word__ in res:
                 Lexical.__token__ = "RESERVED"
             elif Lexical.__word__ in typ:
                 Lexical.__token__ = "TYPES"
-        Lexical.__log__.add_token(token=Lexical.__word__,type=Lexical.__token__)
+            elif Lexical.__word__ in log:
+                Lexical.__token__ = "LOGICAL"
+        Lexical.__log__.add_token(token=Lexical.__word__,type=Lexical.__token__,row=row,col=col)
         return True
 
     def __generate_token__()-> LexicalLog:
-        col,row=-2,0
+        col,row=0,1
         for i in Lexical.__data__:
 
             col+=1
+                
             if i == '\n':
                 row+=1
-                col=-2
-
+                col=0
+                
             if not Lexical.__valid__:
                 if Lexical.__make_error__(i):
                     continue
@@ -119,12 +107,13 @@ class Lexical(object):
                     if not Lexical.__last_token__:
                         Lexical.__word__+=i
                     
-                    Lexical.__valid__ = Lexical.__create_token__(col,row,i)
+                    Lexical.__valid__ = Lexical.__create_token__(col-1,row,i)
                     if Lexical.__valid__:
                         Lexical.__word__ = "" if i in spaces else i
                     elif Lexical.__last_token__:
                         Lexical.__word__+=i
             Lexical.__last_token__ = Lexical.__token_type__()
+        Lexical.__valid__ = Lexical.__create_token__(col-1,row)
             
     
     def analyze(path)->None:

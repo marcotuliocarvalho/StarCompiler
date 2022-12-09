@@ -1,0 +1,10 @@
+{
+    "order":["bool","char","int","float","string","undefined"],
+    "accept":{
+        "int":["int","char","bool"],
+        "float":["float","char","bool","int"],
+        "char":["char","bool"],
+        "bool":["bool"],
+        "string":["float","char","bool","int","string"]
+    }
+}

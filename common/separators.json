@@ -2,7 +2,8 @@
     "EVERY":[
         "\t",
         " ",
-        "\n"
+        "\n",
+        "#"
     ],
     "ID":[
         "END_INSTRUCTION",
@@ -37,6 +38,12 @@
         "END_INSTRUCTION",
         "CASE_START"
     ],
+    "exp":[
+        "END_INSTRUCTION",
+        "SEPARATOR",
+        "R_PARENTHESIS",
+        "LOGICAL_OPERATORS"
+    ],
     "LITERAL":[
         "ARITHMETIC_OPERATOR",
         "LOGICAL_OPERATORS",
@@ -63,6 +70,7 @@
         "CHAR",
         "ARITHMETIC_OPERATOR",
         "END_INSTRUCTION",
+        "L_PARENTHESIS",
         "R_PARENTHESIS",
         "LOGICAL_OPERATORS"
     ],
@@ -98,7 +106,8 @@
         "ARITHMETIC_OPERATOR",
         "END_INSTRUCTION",
         "L_BLOCK",
-        "R_PARENTHESIS"
+        "R_PARENTHESIS",
+        "SEPARATOR"
     ],
     "SEPARATOR": [
         "ID",
